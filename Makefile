@@ -17,10 +17,12 @@ test:
 build-all:
 	make build TAG="7.4"
 	make build TAG="8.0"
+	make build TAG="8.1"
 
 push-all:
 	docker push ghcr.io/bogdankharchenko/vapor-ci:7.4
 	docker push ghcr.io/bogdankharchenko/vapor-ci:8.0
+	docker push ghcr.io/bogdankharchenko/vapor-ci:8.1
 
 clean:
 	docker ps -a -q | xargs docker rm -f
