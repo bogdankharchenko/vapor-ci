@@ -3,13 +3,12 @@ FROM laravelphp/vapor:php74
 ARG BUILD_DATE
 ARG VCS_REF
 
-LABEL org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.schema-version="1.0" \
-      org.label-schema.vendor="bogdankharchenko" \
-      org.label-schema.name="vapor-ci" \
-      org.label-schema.description="Laravel Vapor Docker Environment for CI" \
-      org.label-schema.url="https://github.com/bogdankharchenko/vapor-ci"
+LABEL org.opencontainers.created=$BUILD_DATE \
+      org.opencontainers.revision=$VCS_REF \
+      org.opencontainers.title="laravel vapor ci docker image" \
+      org.opencontainers.image.description="Laravel Vapor Docker Environment for CI" \
+      org.opencontainers.source="https://github.com/bogdankharchenko/vapor-ci" \
+      org.opencontainers.vendor="Bogdan Kharchenko" 
 
 RUN pecl install pcov
 RUN docker-php-ext-enable pcov
